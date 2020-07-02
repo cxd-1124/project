@@ -25,8 +25,6 @@ public class UserServiceimpl implements UserService {
         return userDAO.getAllUser();
     }
 
-
-
     @Override
     public boolean insert(User user) {
         if (null == user){

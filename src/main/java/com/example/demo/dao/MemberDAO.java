@@ -12,20 +12,16 @@ import java.util.List;
 
 @Mapper
 public interface MemberDAO {
-    @Select(value = "SELECT * FROM Member")
+    @Select(value = "SELECT * FROM Member")//查找会员号
     List<Member> getAllMember();
 
     @Insert(value = "INSERT INTO Member(Member.'mid',Member.'name',Member.'phone',Member.'score')\n" +
-                "VALUE(#{mid},#{name},#{phone},#{score})")
+                "VALUE(#{mid},#{name},#{phone},#{score})")//插入一个新的会员
     int insert(Member member);
 
-    @Update(value = "UPDATE Member SET Member.score =  #{score} WHERE Member.mid = #{mid}")
+    @Update(value = "UPDATE Member SET Member.score =  #{score} WHERE Member.mid = #{mid}")//根据已知会员号更新积分数据
     int updateScore(Integer mid, Integer score);
 
-    @Delete(value = "DELETE FROM Member WHERE mid = #{mid}")
+    @Delete(value = "DELETE FROM Member WHERE mid = #{mid}")//删除已知会员号的一行
     int deleteMemb(Integer mid);
-
-
-
-
 }

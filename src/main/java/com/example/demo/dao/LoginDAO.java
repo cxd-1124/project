@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface LoginDAO {
-    @Insert(value = "INSERT INTO Login VALUE(#{login.uid),#(login.passwd)")
+    @Insert(value = "INSERT INTO Login VALUE(#{login.uid),#(login.passwd)")/*向表中插入新的行*/
     int insert(Login login);
 
     @Select(value = "SELECT * FROM Login")
